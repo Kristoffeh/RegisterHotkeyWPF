@@ -31,7 +31,6 @@ namespace RegisterHotkeyWPF
         public MainWindow()
         {
             InitializeComponent();
-
             Subscribe();
         }
 
@@ -39,10 +38,10 @@ namespace RegisterHotkeyWPF
         {
             var Keyboard = default(IKeyboardEventSource);
             Keyboard = WindowsInput.Capture.Global.Keyboard();
-            Subscribe(Keyboard);
+            SubscribeKB(Keyboard);
         }
 
-        private void Subscribe(IKeyboardEventSource Keyboard)
+        private void SubscribeKB(IKeyboardEventSource Keyboard)
         {
             this.m_Keyboard?.Dispose();
             this.m_Keyboard = Keyboard;
@@ -82,6 +81,11 @@ namespace RegisterHotkeyWPF
         {
             m_Keyboard?.Dispose();
             m_Keyboard = null;
+        }
+
+        private void Window_MouseMove(object sender,MouseEventArgs e)
+        {
+            lblMouse.Content = $"{e.GetPosition(this)}";
         }
     }
 }

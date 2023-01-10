@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegisterHotkeyWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing" MouseMove="Window_MouseMove">
     <Grid Margin="10">
         <StackPanel Orientation="Vertical">
             <Label Content="LOG" />
             <TextBox x:Name="txtLog" AcceptsReturn="True" />
+            <Label x:Name="lblMouse" Content="X: 0 - Y: 0" />
         </StackPanel>
         
     </Grid>
